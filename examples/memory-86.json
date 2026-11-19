@@ -1,0 +1,54 @@
+{
+  "model": "deepseek-r1-7b",
+  "completed_turns": 86,
+  "matched_memory_requests": 85,
+  "preview_matches_request": 86,
+  "memory_changes": [
+    {
+      "after_turn": 1,
+      "holder": "访客"
+    },
+    {
+      "after_turn": 39,
+      "holder": "阿宁"
+    },
+    {
+      "after_turn": 64,
+      "holder": "许师傅"
+    }
+  ],
+  "question": "旧宅的铜钥匙现在由谁保管？请只答一个称呼：访客、阿宁或许师傅。",
+  "checkpoints": [
+    {
+      "turn": 20,
+      "expected": "访客",
+      "reply": "\n\n</think>\n\n旧宅的铜钥匙现在由访客保管。",
+      "exact_match": false,
+      "turns_since_event": 19,
+      "recent_turns": 12,
+      "handoff_in_recent_history": false,
+      "names_expected_holder": true
+    },
+    {
+      "turn": 60,
+      "expected": "阿宁",
+      "reply": "\n\n</think>\n\n旧宅的铜钥匙现在由访客保管。",
+      "exact_match": false,
+      "turns_since_event": 21,
+      "recent_turns": 12,
+      "handoff_in_recent_history": false,
+      "names_expected_holder": false
+    },
+    {
+      "turn": 86,
+      "expected": "许师傅",
+      "reply": "\n\n</think>\n\n旧宅的铜钥匙现在由访客保管。",
+      "exact_match": false,
+      "turns_since_event": 22,
+      "recent_turns": 12,
+      "handoff_in_recent_history": false,
+      "names_expected_holder": false
+    }
+  ],
+  "transcript_sha256": "2269a09f2ce0fd8a3b7b57e9dd4e4e999f39d2374b4f584b6a9271a868d01879"
+}
