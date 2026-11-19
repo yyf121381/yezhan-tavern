@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.sqlite*
+*.db
+*.db-*
+.env
+.env.*
+.venv/
+venv/
+*.log
+*.pem
+*.key
+/static/images/
+/instance/
+/data/

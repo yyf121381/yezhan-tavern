@@ -1,0 +1,7 @@
+*
+!requirements.txt
+!model_adapter.py
+!server.py
+!static/
+!static/**
+static/images/*.jpg

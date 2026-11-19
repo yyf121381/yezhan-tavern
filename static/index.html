@@ -1,0 +1,25 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f7f4ee"><title>夜栈 · 角色酒馆</title><link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script></head><body>
+<header><div class="wrap bar"><a class="brand" href="/" aria-label="夜栈首页"><span class="mark" aria-hidden="true">✦</span>夜栈<span class="brand-en">NIGHT INN</span></a><nav aria-label="角色书架"><button id="discover" aria-pressed="true">发现角色</button><button id="mine" aria-pressed="false">我的角色</button></nav><div class="tools"><button id="connect" class="quiet">连接模型</button><button id="create" class="ink">＋ 创建角色</button></div></div></header>
+<main class="wrap"><section id="hero" class="hero" aria-label="本期角色"><div class="hero-text"><span class="hero-label">本期角色　/　科幻</span><h1>沈星遥</h1><p>停电的第七夜，山顶观测站收到了一封来自明天的电报。</p><button id="feature" class="paper">与她交谈 <span aria-hidden="true">✦</span></button></div></section>
+<section class="shelf"><div class="shelf-head"><h2 id="heading">角色书架</h2><input type="search" id="search" aria-label="搜索角色" placeholder="搜索角色或关键词"></div><div id="filters" class="filters" aria-label="题材"></div><div id="cards" class="grid" aria-live="polite"></div><p id="notice" role="status"></p></section></main>
+<dialog id="editor"><form id="card-form"><div class="dialog-head"><h2>创建角色卡</h2><button type="button" class="x" data-close aria-label="关闭">×</button></div>
+<label class="import-card">导入角色卡 JSON<input type="file" id="card-file" accept=".json,application/json"></label><p class="small">导入会填入下方表单，可先检查，再保存到自己的书架。</p>
+<div class="fields"><label>角色名<input name="name" required maxlength="40" placeholder="这个角色叫什么？"></label><label>题材<input name="genre" maxlength="20" placeholder="例如：奇幻"></label></div>
+<label>一句话简介<input name="description" maxlength="240" placeholder="访客在书架上看到的介绍"></label>
+<label>人物设定<textarea name="persona" required maxlength="6000" rows="3" placeholder="写下身份、性格，以及角色说话的方式"></textarea></label>
+<label>开场白<textarea name="greeting" required maxlength="1500" rows="2" placeholder="访客进入对话后，角色说的第一句话"></textarea></label>
+<label>封面场景<select name="cover"><option value="mountain">星夜雪山</option><option value="library">旧日书库</option><option value="forest">林间小径</option></select></label>
+<label class="check"><input type="checkbox" name="public">发布到公共书架，其他访客可查看角色设定并聊天</label>
+<div class="end"><span id="save-status" role="status"></span><button class="ink">保存角色卡</button></div></form></dialog>
+<dialog id="connection"><form id="model-form"><div class="dialog-head"><h2>连接聊天模型</h2><button type="button" class="x" data-close aria-label="关闭">×</button></div><p id="model-destination"></p><label id="key-label">模型 API 密钥<input id="key" type="password" autocomplete="off" spellcheck="false" placeholder="粘贴 API 密钥"></label><p class="small">密钥只在当前页面使用，刷新后需重新填写。</p><div class="end"><button id="disconnect" type="button" class="quiet">清除密钥</button><button class="ink">保存连接</button></div></form></dialog>
+<dialog id="conversation"><div class="dialog-head chat-head"><div><small id="chat-genre"></small><h2 id="chat-name"></h2></div><button class="x" data-close aria-label="关闭对话">×</button></div><div id="thread" aria-live="polite"></div><div class="composer"><p id="chat-status" role="status"></p><form id="chat-form"><label class="sr" for="message">你的消息</label><textarea id="message" rows="2" maxlength="4000" placeholder="写给角色的消息…" required></textarea><button id="send" class="ink">发送</button></form><button id="preview-open" type="button" class="link">上下文预览</button> · <button id="export-card" type="button" class="link">导出角色卡</button> · <button id="memory-open" class="link">剧情记忆</button> · <button id="chat-connect" class="link">模型连接设置</button></div></dialog><dialog id="memory-dialog"><div class="dialog-head"><h2>剧情记忆</h2><button class="x" data-close aria-label="关闭记忆">×</button></div>
+<details class="scene"><summary>叙事尺度与边界</summary><form id="scene-form">
+<label class="check"><input type="checkbox" id="adult-scene">我已成年，本段允许成年角色间自愿的亲密剧情</label>
+<label>叙事边界<textarea id="scene-boundaries" maxlength="400" rows="2" placeholder="例如：亲密情节淡出，不描写受伤细节"></textarea></label>
+<button class="quiet">保存本段设置</button><span id="scene-status" role="status"></span></form></details>
+<p id="context-count" class="small"></p><div id="memory-list"></div>
+<form id="memory-form"><label>记忆主题<input id="memory-topic" required maxlength="40" placeholder="例如：铜钥匙的去向"></label>
+<label>当前事实<textarea id="memory-fact" required maxlength="240" rows="2" placeholder="例如：钥匙已归还给林见秋。"></textarea></label>
+<p id="memory-source" class="small"></p><p id="memory-status" role="status"></p>
+<div class="end"><button type="button" class="link" id="memory-reset">新记一条</button><button class="ink" id="memory-save">确认记忆</button></div></form></dialog><dialog id="preview"><div class="dialog-head"><h2>上下文预览</h2><button class="x" data-close aria-label="关闭预览">×</button></div>
+<p id="preview-summary" class="small" role="status"></p><div id="preview-content"></div></dialog></body></html>
